@@ -112,6 +112,7 @@ add_library(angle::image_util ALIAS angle_image_util)
 ##########
 # angle::translator
 file(GLOB TRANSLATOR_SOURCES
+    "src/compiler/translator/BaseTypes.cpp"
     "src/compiler/translator/BaseTypes.h"
     "src/compiler/translator/BuiltInFunctionEmulator.cpp"
     "src/compiler/translator/BuiltInFunctionEmulator.h"
@@ -201,6 +202,8 @@ file(GLOB TRANSLATOR_SOURCES
     "src/compiler/translator/ValidateOutputs.h"
     "src/compiler/translator/ValidateSwitch.cpp"
     "src/compiler/translator/ValidateSwitch.h"
+    "src/compiler/translator/ValidateTypeSizeLimitations.cpp"
+    "src/compiler/translator/ValidateTypeSizeLimitations.h"
     "src/compiler/translator/ValidateVaryingLocations.cpp"
     "src/compiler/translator/ValidateVaryingLocations.h"
     "src/compiler/translator/VariablePacker.cpp"
@@ -525,6 +528,7 @@ elseif(WINDOWS_DESKTOP)
         angle::renderer::win32
         angle::renderer::opengl
         gdi32
+        dxgi
     )
 else()
     set(LIBANGLE_RENDERER_PLATFORM )
